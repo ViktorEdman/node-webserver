@@ -17,17 +17,22 @@ router.use((basicAuth({
 
 //Display index page
 router.get("/", async (req, res) => {
-    console.log(await listDirFiles("uploaded_files"))
-    res.render('files/index')
+    const files = await listDirFiles("uploaded_files")
+    res.render('files/index', {files})
 })
+
+
 
 //Create new file
 router.post('/', async (req,res) => {
-
+    console.log(req.files)
+    res.redirect('/files')
 }) 
 
 //Retrieve a file
-
+router.get("/:filename", async (req, res) => {
+    res.download(process.cwd()+"/uploaded_files/"+req.params.filename)
+})
 
 //list all files
 

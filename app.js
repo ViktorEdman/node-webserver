@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }))
 //Routers
 // const articleRouter = require('./routes/articles')
 // const apiRouter = require('./routes/api')
-
+const filesRouter = require('./routes/files')
 /* 	Routes */
 
 //The server is a teapot, and can not serve coffee.
@@ -63,6 +63,8 @@ app.use(
 app.use(['/react', '/react/*'], (req, res) => {
     res.sendFile(path.join(__dirname, '/public/react/index.html'))
 })
+
+app.use('/files', filesRouter)
 
 //HTML blog is served from /articles by articleRouter **DEPRECATED**
 /* app.use('/articles', articleRouter) */

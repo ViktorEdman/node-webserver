@@ -4,6 +4,11 @@ const basicAuth = require('express-basic-auth')
 
 const fs = require('fs/promises')
 
+const listDirFiles = async (dir) => {
+    const fileList = await fs.readdir(dir)
+    return fileList.filter(item => !(/(^|\/)\.[^\/\.]/g).test(item)) //remove hidden files
+}
+
 router.use((basicAuth({
     users: { 'mongo': 'derpderp' },
     challenge: true
@@ -12,7 +17,7 @@ router.use((basicAuth({
 
 //Display index page
 router.get("/", async (req, res) => {
-    console.log(await fs.readdir("uploaded_files"))
+    console.log(await listDirFiles("uploaded_files"))
     res.render('files/index')
 })
 

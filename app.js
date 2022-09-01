@@ -66,10 +66,6 @@ app.use(['/react', '/react/*'], (req, res) => {
 
 app.use('/files', filesRouter)
 
-//HTML blog is served from /articles by articleRouter **DEPRECATED**
-/* app.use('/articles', articleRouter) */
-//API endpoints are served from /api by apiRouter
-// app.use('/api', apiRouter)
 
 //Last match is for 404, since all other options have been exhausted
 app.use('*', (req, res, next) => {

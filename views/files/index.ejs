@@ -12,15 +12,18 @@
     <div class="container">
         <h1 class="mb-4">Upload & Download files</h1>
         <form action="/files" method="post" enctype="multipart/form-data">
-            <input type="file" name="fileupload">
+            <input type="file" name="file">
             <br>
             <button type="submit">Ladd it upp</button>
           </form>
         <h2 class="mb-3">Uploaded files</h2>
         <ul>
+            <% if (files.length > 0) { %>
             <% files.forEach(file => { %>
-                <li><a href=<%= file %> ><%= file %></a></li>
-                <% }) %> 
+                <li><a href="<%= encodeURIComponent(file) %>" ><%= file %></a></li>
+                <% }) } else {%> 
+                    <div>No files found.</div> 
+                    <% } %>
         </ul>
     </div>
         

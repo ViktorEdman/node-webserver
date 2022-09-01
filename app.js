@@ -73,7 +73,7 @@ app.use('/files', filesRouter)
 
 //Last match is for 404, since all other options have been exhausted
 app.use('*', (req, res, next) => {
-    res.send(404)
+    res.sendStatus(404)
     next()
 })
 

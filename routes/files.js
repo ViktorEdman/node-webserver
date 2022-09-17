@@ -13,7 +13,7 @@ const listDirFiles = async (dir) => {
 
 router.use(
     basicAuth({
-        users: { mongo: 'derpderp' },
+        users: { admin: 'admin' },
         challenge: true,
     })
 )

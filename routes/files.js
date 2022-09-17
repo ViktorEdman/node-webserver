@@ -14,7 +14,7 @@ const listDirFiles = async (dir) => {
 router.use(
     basicAuth({
         users: { admin: 'admin' },
-        challenge: true,
+        challenge: true
     })
 )
 

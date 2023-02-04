@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: false }))
 //Routers
 // const articleRouter = require('./routes/articles')
 // const apiRouter = require('./routes/api')
-const filesRouter = require('./routes/files')
+// const filesRouter = require('./routes/files')
 /* 	Routes */
 
 //The server is a teapot, and can not serve coffee.
@@ -64,7 +64,7 @@ app.use(['/react', '/react/*'], (req, res) => {
     res.sendFile(path.join(__dirname, '/public/react/index.html'))
 })
 
-app.use('/files', filesRouter)
+// app.use('/files', filesRouter)
 
 
 //Last match is for 404, since all other options have been exhausted

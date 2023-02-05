@@ -9,6 +9,8 @@ services:
       - .:/app
     networks:
       - nginx-proxy-manager_default
+    ports:
+      - 30000:30000
 networks:
   nginx-proxy-manager_default:
     external: true

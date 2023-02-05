@@ -1,7 +1,7 @@
 version: '3'
 services:
   viktoredmanse:
-    image: node:current-alpine
+    build: .
     container_name: node_webserver
     command: node app.js
     working_dir: /app

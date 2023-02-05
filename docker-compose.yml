@@ -1,0 +1,14 @@
+version: '3'
+services:
+  viktoredmanse:
+    image: node:current-alpine
+    container_name: node_webserver
+    command: node app.js
+    working_dir: /app
+    volumes:
+      - .:/app
+    networks:
+      - nginx-proxy-manager_default
+networks:
+  nginx-proxy-manager_default:
+    external: true

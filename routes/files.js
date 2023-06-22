@@ -14,7 +14,7 @@ const listDirFiles = async (dir) => {
 }
 
 const authorize = basicAuth({
-    users: { admin: '2uNeaeQCJUokB2HYAdWm' },
+    users: { admin: process.env.FILESPASSWORD },
     challenge: true
 })
 

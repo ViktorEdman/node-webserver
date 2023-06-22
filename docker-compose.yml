@@ -8,9 +8,7 @@ services:
     volumes:
       - .:/app
     networks:
-      - nginx-proxy-manager_default
-    ports:
-      - 30000:30000
+      - web
 networks:
-  nginx-proxy-manager_default:
+  web:
     external: true

@@ -4,7 +4,7 @@
   "description": "An experiment for creating a webserver in node with SSL and a proper hostname",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --ignore 'uploaded_files' -e js,ejs,json,css app.js"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "express-basic-auth": "^1.2.1",
     "formidable": "^2.0.1",
     "mariadb": "^2.5.3",
+    "nodemon": "^2.0.22",
     "prettier": "^2.7.1",
     "sequelize": "^6.6.2"
   }
